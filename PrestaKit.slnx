@@ -1,0 +1,18 @@
+<Solution>
+  <Folder Name="/samples/">
+    <Project Path="samples/PrestaKit.Sample/PrestaKit.Sample.csproj" Id="ef72bcb4-c654-48b3-9b98-91651de01d98" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path=".gitignore" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Packages.props" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/PrestaKit.Extensions.DependencyInjection/PrestaKit.Extensions.DependencyInjection.csproj" Id="d035478e-e20d-45c6-8f5a-2f7dd46d31e4" />
+    <Project Path="src/PrestaKit/PrestaKit.csproj" Id="7638def0-fab0-43ea-861f-221b754a5ed7" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/PrestaKit.IntegrationTests/PrestaKit.IntegrationTests.csproj" Id="b9667f9e-8c2a-4146-87a8-36163b854bef" />
+    <Project Path="tests/PrestaKit.Tests/PrestaKit.Tests.csproj" Id="d08a61bc-0557-4b70-9c0e-cb24f9f5db6d" />
+  </Folder>
+</Solution>
