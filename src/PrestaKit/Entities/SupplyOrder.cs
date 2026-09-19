@@ -63,6 +63,10 @@ public class SupplyOrder : PrestaShopEntity
     [XmlElement("associations")]
     public SupplyOrderAssociations? Associations { get; set; }
 
+    // Read-only fields
+    public bool ShouldSerializeDateAdd() => DateAdd.HasValue;
+    public bool ShouldSerializeDateUpd() => DateUpd.HasValue;
+
     public bool ShouldSerializeIdSupplier() => IdSupplier.HasValue;
     public bool ShouldSerializeIdLang() => IdLang.HasValue;
     public bool ShouldSerializeIdWarehouse() => IdWarehouse.HasValue;
@@ -78,7 +82,5 @@ public class SupplyOrder : PrestaShopEntity
     public bool ShouldSerializeDiscountRate() => DiscountRate.HasValue;
     public bool ShouldSerializeDiscountValueTe() => DiscountValueTe.HasValue;
     public bool ShouldSerializeIsTemplate() => IsTemplate.HasValue;
-    public bool ShouldSerializeDateAdd() => DateAdd.HasValue;
-    public bool ShouldSerializeDateUpd() => DateUpd.HasValue;
     public bool ShouldSerializeAssociations() => Associations != null;
 }

@@ -29,11 +29,13 @@ public class Message : PrestaShopEntity
     [XmlElement("date_add")]
     public DateTime? DateAdd { get; set; }
 
+    // Read-only fields
+    public bool ShouldSerializeDateAdd() => DateAdd.HasValue && false;
+
     public bool ShouldSerializeIdCart() => IdCart.HasValue;
     public bool ShouldSerializeIdOrder() => IdOrder.HasValue;
     public bool ShouldSerializeIdCustomer() => IdCustomer.HasValue;
     public bool ShouldSerializeIdEmployee() => IdEmployee.HasValue;
     public bool ShouldSerializeMessageValue() => !string.IsNullOrEmpty(MessageValue);
     public bool ShouldSerializePrivate() => Private.HasValue;
-    public bool ShouldSerializeDateAdd() => DateAdd.HasValue;
 }

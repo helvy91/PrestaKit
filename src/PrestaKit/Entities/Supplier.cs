@@ -36,11 +36,13 @@ public class Supplier : PrestaShopEntity, IHasImages
     [XmlElement("meta_keywords")]
     public TranslatedField? MetaKeywords { get; set; }
 
+    // Read-only fields
+    public bool ShouldSerializeDateAdd() => DateAdd.HasValue;
+    public bool ShouldSerializeDateUpd() => DateUpd.HasValue;
+
     public bool ShouldSerializeLinkRewrite() => LinkRewrite != null;
     public bool ShouldSerializeName() => Name != null;
     public bool ShouldSerializeActive() => !string.IsNullOrEmpty(Active);
-    public bool ShouldSerializeDateAdd() => DateAdd.HasValue;
-    public bool ShouldSerializeDateUpd() => DateUpd.HasValue;
     public bool ShouldSerializeDescription() => Description != null;
     public bool ShouldSerializeMetaTitle() => MetaTitle != null;
     public bool ShouldSerializeMetaDescription() => MetaDescription != null;

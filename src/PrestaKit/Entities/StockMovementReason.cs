@@ -23,9 +23,11 @@ public class StockMovementReason : PrestaShopEntity
     [XmlElement("name")]
     public TranslatedField? Name { get; set; }
 
-    public bool ShouldSerializeSign() => !string.IsNullOrEmpty(Sign);
-    public bool ShouldSerializeDeleted() => !string.IsNullOrEmpty(Deleted);
+    // Read-only fields
     public bool ShouldSerializeDateAdd() => DateAdd.HasValue;
     public bool ShouldSerializeDateUpd() => DateUpd.HasValue;
+
+    public bool ShouldSerializeSign() => !string.IsNullOrEmpty(Sign);
+    public bool ShouldSerializeDeleted() => !string.IsNullOrEmpty(Deleted);
     public bool ShouldSerializeName() => Name != null;
 }

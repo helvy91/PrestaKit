@@ -26,10 +26,12 @@ public class Group : PrestaShopEntity
     [XmlElement("name")]
     public TranslatedField? Name { get; set; }
 
+    // Read-only fields
+    public bool ShouldSerializeDateAdd() => DateAdd.HasValue && false;
+    public bool ShouldSerializeDateUpd() => DateUpd.HasValue && false;
+
     public bool ShouldSerializeReduction() => Reduction.HasValue;
     public bool ShouldSerializePriceDisplayMethod() => !string.IsNullOrEmpty(PriceDisplayMethod);
     public bool ShouldSerializeShowPrices() => ShowPrices.HasValue;
-    public bool ShouldSerializeDateAdd() => DateAdd.HasValue;
-    public bool ShouldSerializeDateUpd() => DateUpd.HasValue;
     public bool ShouldSerializeName() => Name != null;
 }

@@ -59,6 +59,10 @@ public class Store : PrestaShopEntity
     [XmlElement("note")]
     public string? Note { get; set; }
 
+    // Read-only fields
+    public bool ShouldSerializeDateAdd() => DateAdd.HasValue;
+    public bool ShouldSerializeDateUpd() => DateUpd.HasValue;
+
     public bool ShouldSerializeIdCountry() => IdCountry.HasValue;
     public bool ShouldSerializeIdState() => IdState.HasValue;
     public bool ShouldSerializeHours() => !string.IsNullOrEmpty(Hours);
@@ -70,8 +74,6 @@ public class Store : PrestaShopEntity
     public bool ShouldSerializeFax() => !string.IsNullOrEmpty(Fax);
     public bool ShouldSerializeEmail() => !string.IsNullOrEmpty(Email);
     public bool ShouldSerializeActive() => Active.HasValue;
-    public bool ShouldSerializeDateAdd() => DateAdd.HasValue;
-    public bool ShouldSerializeDateUpd() => DateUpd.HasValue;
     public bool ShouldSerializeName() => Name != null;
     public bool ShouldSerializeAddress1() => !string.IsNullOrEmpty(Address1);
     public bool ShouldSerializeAddress2() => !string.IsNullOrEmpty(Address2);

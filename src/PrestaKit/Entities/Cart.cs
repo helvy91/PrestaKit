@@ -66,6 +66,10 @@ public class Cart : PrestaShopEntity
     [XmlElement("associations")] 
     public CartAssociations? Associations { get; set; }
 
+    // Read-only fields
+    public bool ShouldSerializeDateAdd() => DateAdd.HasValue && false;
+    public bool ShouldSerializeDateUpd() => DateUpd.HasValue && false;
+
     public bool ShouldSerializeIdAddressDelivery() => IdAddressDelivery.HasValue;
     public bool ShouldSerializeIdAddressInvoice() => IdAddressInvoice.HasValue;
     public bool ShouldSerializeIdCurrency() => IdCurrency.HasValue;
@@ -82,7 +86,5 @@ public class Cart : PrestaShopEntity
     public bool ShouldSerializeDeliveryOption() => !string.IsNullOrEmpty(DeliveryOption);
     public bool ShouldSerializeSecureKey() => !string.IsNullOrEmpty(SecureKey);
     public bool ShouldSerializeAllowSeperatedPackage() => AllowSeperatedPackage.HasValue;
-    public bool ShouldSerializeDateAdd() => DateAdd.HasValue;
-    public bool ShouldSerializeDateUpd() => DateUpd.HasValue;
     public bool ShouldSerializeAssociations() => Associations != null;
 }

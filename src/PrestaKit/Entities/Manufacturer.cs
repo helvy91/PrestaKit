@@ -19,10 +19,10 @@ public class Manufacturer : PrestaShopEntity, IHasImages
     public TranslatedField? Name { get; set; }
 
     [XmlElement("date_add")]
-    public string? DateAdd { get; set; }
+    public DateTime? DateAdd { get; set; }
 
     [XmlElement("date_upd")]
-    public string? DateUpd { get; set; }
+    public DateTime? DateUpd { get; set; }
 
     [XmlElement("description")]
     public TranslatedField? Description { get; set; }
@@ -44,11 +44,11 @@ public class Manufacturer : PrestaShopEntity, IHasImages
 
     // Read-only fields
     public static bool ShouldSerializeLinkRewrite() => false;
+    public bool ShouldSerializeDateAdd() => DateAdd.HasValue && false;
+    public bool ShouldSerializeDateUpd() => DateUpd.HasValue && false;
 
     public bool ShouldSerializeActive() => !string.IsNullOrEmpty(Active);
     public bool ShouldSerializeName() => Name != null;
-    public bool ShouldSerializeDateAdd() => !string.IsNullOrEmpty(DateAdd);
-    public bool ShouldSerializeDateUpd() => !string.IsNullOrEmpty(DateUpd);
     public bool ShouldSerializeDescription() => Description != null;
     public bool ShouldSerializeShortDescription() => ShortDescription != null;
     public bool ShouldSerializeMetaTitle() => MetaTitle != null;

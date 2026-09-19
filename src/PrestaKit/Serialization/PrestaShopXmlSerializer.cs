@@ -143,7 +143,6 @@ namespace PrestaKit.Serialization
 
         private static void NormalizeXmlValuesForSerialization<T>(XElement entityNode) where T : PrestaShopEntity
         {
-            NormalizeReadOnlyFieldsForSerialization(entityNode);
             NormalizeDates<T>(entityNode, DateFormat.Serialization);
             NormalizeBooleansForSerialization<T>(entityNode);
         }
@@ -160,15 +159,6 @@ namespace PrestaKit.Serialization
             {
                 node.Remove();
             }
-        }
-
-        private static void NormalizeReadOnlyFieldsForSerialization(XElement entityNode)
-        {
-            var toStrip = new HashSet<string>(UniversalReadOnly);    
-            entityNode.Elements()
-                .Where(e => toStrip.Contains(e.Name.LocalName))
-                .ToList()
-                .ForEach(e => e.Remove());
         }
 
         private static void NormalizeDates<T>(XElement entityNode, DateFormat target) where T : PrestaShopEntity
@@ -281,9 +271,6 @@ namespace PrestaKit.Serialization
             BoolFieldsByType[type] = boolFields;
             return boolFields;
         }
-
-        // Read-only fields removal
-        private static readonly HashSet<string> UniversalReadOnly = ["date_add", "date_upd"];
 
         #endregion
     }

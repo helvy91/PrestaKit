@@ -38,6 +38,10 @@ public class CustomerMessage : PrestaShopEntity
     [XmlElement("read")]
     public bool? Read { get; set; }
 
+    // Read-only fields
+    public bool ShouldSerializeDateAdd() => DateAdd.HasValue && false;
+    public bool ShouldSerializeDateUpd() => DateUpd.HasValue && false;
+
     public bool ShouldSerializeIdEmployee() => IdEmployee.HasValue;
     public bool ShouldSerializeIdCustomerThread() => IdCustomerThread.HasValue;
     public bool ShouldSerializeIpAddress() => !string.IsNullOrEmpty(IpAddress);
@@ -45,8 +49,6 @@ public class CustomerMessage : PrestaShopEntity
     public bool ShouldSerializeFileName() => !string.IsNullOrEmpty(FileName);
     public bool ShouldSerializeUserAgent() => !string.IsNullOrEmpty(UserAgent);
     public bool ShouldSerializePrivate() => Private.HasValue;
-    public bool ShouldSerializeDateAdd() => DateAdd.HasValue;
-    public bool ShouldSerializeDateUpd() => DateUpd.HasValue;
     public bool ShouldSerializeRead() => Read.HasValue;
 }
 

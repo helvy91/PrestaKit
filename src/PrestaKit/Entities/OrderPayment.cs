@@ -44,6 +44,9 @@ public class OrderPayment : PrestaShopEntity
     [XmlElement("date_add")]
     public DateTime? DateAdd { get; set; }
 
+    // Read-only fields
+    public bool ShouldSerializeDateAdd() => DateAdd.HasValue;
+
     public bool ShouldSerializeOrderReference() => !string.IsNullOrEmpty(OrderReference);
     public bool ShouldSerializeIdCurrency() => IdCurrency.HasValue;
     public bool ShouldSerializeAmount() => Amount.HasValue;
@@ -55,5 +58,4 @@ public class OrderPayment : PrestaShopEntity
     public bool ShouldSerializeCardExpiration() => !string.IsNullOrEmpty(CardExpiration);
     public bool ShouldSerializeCardHolder() => !string.IsNullOrEmpty(CardHolder);
     public bool ShouldSerializeIdEmployee() => IdEmployee.HasValue;
-    public bool ShouldSerializeDateAdd() => DateAdd.HasValue;
 }

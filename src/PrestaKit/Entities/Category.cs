@@ -64,14 +64,14 @@ public class Category : PrestaShopEntity, IHasImages
     // Read-only fields
     public bool ShouldSerializeLevelDepth() => LevelDepth.HasValue && false;
     public bool ShouldSerializeNbProductsRecursive() => !string.IsNullOrWhiteSpace(NbProductsRecursive) && false;
+    public bool ShouldSerializeDateAdd() => DateAdd.HasValue && false;
+    public bool ShouldSerializeDateUpd() => DateUpd.HasValue && false;
 
     public bool ShouldSerializeIdParent() => IdParent.HasValue;
     public bool ShouldSerializeActive() => Active.HasValue;
     public bool ShouldSerializeIdShopDefault() => IdShopDefault.HasValue;
     public bool ShouldSerializeIsRootCategory() => IsRootCategory.HasValue;
     public bool ShouldSerializePosition() => !string.IsNullOrEmpty(Position);
-    public bool ShouldSerializeDateAdd() => DateAdd.HasValue;
-    public bool ShouldSerializeDateUpd() => DateUpd.HasValue;
     public bool ShouldSerializeName() => Name != null;
     public bool ShouldSerializeLinkRewrite() => LinkRewrite != null;
     public bool ShouldSerializeDescription() => Description != null;

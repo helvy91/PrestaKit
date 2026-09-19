@@ -62,6 +62,9 @@ public class OrderInvoice : PrestaShopEntity
     [XmlElement("date_add")]
     public DateTime? DateAdd { get; set; }
 
+    // Read-only fields
+    public bool ShouldSerializeDateAdd() => DateAdd.HasValue;
+
     public bool ShouldSerializeIdOrder() => IdOrder.HasValue;
     public bool ShouldSerializeNumber() => Number.HasValue;
     public bool ShouldSerializeDeliveryNumber() => DeliveryNumber.HasValue;
@@ -79,5 +82,4 @@ public class OrderInvoice : PrestaShopEntity
     public bool ShouldSerializeTotalWrappingTaxIncl() => !string.IsNullOrEmpty(TotalWrappingTaxIncl);
     public bool ShouldSerializeShopAddress() => !string.IsNullOrEmpty(ShopAddress);
     public bool ShouldSerializeNote() => !string.IsNullOrEmpty(Note);
-    public bool ShouldSerializeDateAdd() => DateAdd.HasValue;
 }

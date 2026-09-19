@@ -73,6 +73,11 @@ public class Address : PrestaShopEntity
 
     [XmlElement("date_upd")]
     public DateTime? DateUpd { get; set; }
+
+    // Read-only fields
+    public bool ShouldSerializeDateAdd() => DateAdd.HasValue && false;
+    public bool ShouldSerializeDateUpd() => DateUpd.HasValue && false;
+
     public bool ShouldSerializeIdCustomer() => IdCustomer.HasValue;
     public bool ShouldSerializeIdManufacturer() => IdManufacturer.HasValue;
     public bool ShouldSerializeIdSupplier() => IdSupplier.HasValue;
@@ -93,6 +98,4 @@ public class Address : PrestaShopEntity
     public bool ShouldSerializePhoneMobile() => !string.IsNullOrEmpty(PhoneMobile);
     public bool ShouldSerializeDni() => !string.IsNullOrEmpty(Dni);
     public bool ShouldSerializeDeleted() => Deleted.HasValue;
-    public bool ShouldSerializeDateAdd() => DateAdd.HasValue;
-    public bool ShouldSerializeDateUpd() => DateUpd.HasValue;
 }

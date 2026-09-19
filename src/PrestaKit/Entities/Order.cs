@@ -150,6 +150,10 @@ public class Order : PrestaShopEntity
     [XmlElement("associations")]
     public OrderAssociations? Associations { get; set; }
 
+    // Read-only fields
+    public bool ShouldSerializeDateAdd() => DateAdd.HasValue && false;
+    public bool ShouldSerializeDateUpd() => DateUpd.HasValue && false;
+
     public bool ShouldSerializeIdAddressDelivery() => IdAddressDelivery.HasValue;
     public bool ShouldSerializeIdAddressInvoice() => IdAddressInvoice.HasValue;
     public bool ShouldSerializeIdCart() => IdCart.HasValue;
@@ -164,8 +168,6 @@ public class Order : PrestaShopEntity
     public bool ShouldSerializeDeliveryNumber() => !string.IsNullOrEmpty(DeliveryNumber);
     public bool ShouldSerializeDeliveryDate() => !string.IsNullOrEmpty(DeliveryDate);
     public bool ShouldSerializeValid() => !string.IsNullOrEmpty(Valid);
-    public bool ShouldSerializeDateAdd() => DateAdd.HasValue;
-    public bool ShouldSerializeDateUpd() => DateUpd.HasValue;
     public bool ShouldSerializeShippingNumber() => !string.IsNullOrEmpty(ShippingNumber);
     public bool ShouldSerializeNote() => !string.IsNullOrEmpty(Note);
     public bool ShouldSerializeIdShopGroup() => IdShopGroup.HasValue;

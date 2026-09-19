@@ -107,6 +107,8 @@ public class Customer : PrestaShopEntity
     // Read-only fields
     public  bool ShouldSerializeLastPasswdGen() => !string.IsNullOrWhiteSpace(LastPasswdGen) && false;
     public  bool ShouldSerializeSecureKey() => !string.IsNullOrWhiteSpace(SecureKey) && false;
+    public bool ShouldSerializeDateAdd() => DateAdd.HasValue && false;
+    public bool ShouldSerializeDateUpd() => DateUpd.HasValue && false;
 
     public bool ShouldSerializeIdDefaultGroup() => IdDefaultGroup.HasValue;
     public bool ShouldSerializeIdLang() => IdLang.HasValue;
@@ -134,8 +136,6 @@ public class Customer : PrestaShopEntity
     public bool ShouldSerializeIsGuest() => IsGuest.HasValue;
     public bool ShouldSerializeIdShop() => IdShop.HasValue;
     public bool ShouldSerializeIdShopGroup() => IdShopGroup.HasValue;
-    public bool ShouldSerializeDateAdd() => DateAdd.HasValue;
-    public bool ShouldSerializeDateUpd() => DateUpd.HasValue;
     public bool ShouldSerializeResetPasswordToken() => !string.IsNullOrEmpty(ResetPasswordToken);
     public bool ShouldSerializeResetPasswordValidity() => !string.IsNullOrEmpty(ResetPasswordValidity);
 }

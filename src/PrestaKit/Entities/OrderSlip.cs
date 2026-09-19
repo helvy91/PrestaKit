@@ -54,6 +54,10 @@ public class OrderSlip : PrestaShopEntity
     [XmlElement("associations")] 
     public OrderSlipAssociations? Associations { get; set; }
 
+    // Read-only fields
+    public bool ShouldSerializeDateAdd() => DateAdd.HasValue;
+    public bool ShouldSerializeDateUpd() => DateUpd.HasValue;
+
     public bool ShouldSerializeIdCustomer() => IdCustomer.HasValue;
     public bool ShouldSerializeIdOrder() => IdOrder.HasValue;
     public bool ShouldSerializeConversionRate() => ConversionRate.HasValue;
@@ -65,8 +69,6 @@ public class OrderSlip : PrestaShopEntity
     public bool ShouldSerializeShippingCost() => !string.IsNullOrEmpty(ShippingCost);
     public bool ShouldSerializeShippingCostAmount() => ShippingCostAmount.HasValue;
     public bool ShouldSerializePartial() => !string.IsNullOrEmpty(Partial);
-    public bool ShouldSerializeDateAdd() => DateAdd.HasValue;
-    public bool ShouldSerializeDateUpd() => DateUpd.HasValue;
     public bool ShouldSerializeOrderSlipType() => OrderSlipType.HasValue;
     public bool ShouldSerializeAssociations() => Associations != null;
 }

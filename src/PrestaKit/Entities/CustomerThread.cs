@@ -41,6 +41,10 @@ public class CustomerThread : PrestaShopEntity
     [XmlElement("date_upd")]
     public DateTime? DateUpd { get; set; }
 
+    // Read-only fields
+    public bool ShouldSerializeDateAdd() => DateAdd.HasValue && false;
+    public bool ShouldSerializeDateUpd() => DateUpd.HasValue && false;
+
     public bool ShouldSerializeIdLang() => IdLang.HasValue;
     public bool ShouldSerializeIdShop() => IdShop.HasValue;
     public bool ShouldSerializeIdCustomer() => IdCustomer.HasValue;
@@ -50,6 +54,4 @@ public class CustomerThread : PrestaShopEntity
     public bool ShouldSerializeEmail() => !string.IsNullOrEmpty(Email);
     public bool ShouldSerializeToken() => !string.IsNullOrEmpty(Token);
     public bool ShouldSerializeStatus() => !string.IsNullOrEmpty(Status);
-    public bool ShouldSerializeDateAdd() => DateAdd.HasValue;
-    public bool ShouldSerializeDateUpd() => DateUpd.HasValue;
 }

@@ -26,9 +26,11 @@ public class TranslatedConfiguration : PrestaShopEntity
     [XmlElement("id_shop")]
     public long? IdShop { get; set; }
 
+    // Read-only fields
+    public bool ShouldSerializeDateAdd() => DateAdd.HasValue && false;
+    public bool ShouldSerializeDateUpd() => DateUpd.HasValue && false;
+
     public bool ShouldSerializeValue() => Value != null;
-    public bool ShouldSerializeDateAdd() => DateAdd.HasValue;
-    public bool ShouldSerializeDateUpd() => DateUpd.HasValue;
     public bool ShouldSerializeName() => Name != null;
     public bool ShouldSerializeIdShopGroup() => IdShopGroup.HasValue;
     public bool ShouldSerializeIdShop() => IdShop.HasValue;

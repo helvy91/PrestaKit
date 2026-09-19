@@ -29,11 +29,13 @@ public class SupplyOrderReceiptHistory : PrestaShopEntity
     [XmlElement("date_add")]
     public DateTime? DateAdd { get; set; }
 
+    // Read-only fields
+    public bool ShouldSerializeDateAdd() => DateAdd.HasValue && false;
+
     public bool ShouldSerializeIdSupplyOrderDetail() => IdSupplyOrderDetail.HasValue;
     public bool ShouldSerializeIdEmployee() => IdEmployee.HasValue;
     public bool ShouldSerializeIdSupplyOrderState() => IdSupplyOrderState.HasValue;
     public bool ShouldSerializeEmployeeFirstname() => !string.IsNullOrEmpty(EmployeeFirstname);
     public bool ShouldSerializeEmployeeLastname() => !string.IsNullOrEmpty(EmployeeLastname);
     public bool ShouldSerializeQuantity() => Quantity.HasValue;
-    public bool ShouldSerializeDateAdd() => DateAdd.HasValue;
 }

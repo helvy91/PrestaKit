@@ -230,6 +230,8 @@ public class Product : PrestaShopEntity, IHasImages
     public bool ShouldSerializeNew() => !string.IsNullOrWhiteSpace(New) && false;
     public bool ShouldSerializeManufacturerName() => !string.IsNullOrWhiteSpace(ManufacturerName) && false;
     public bool ShouldSerializeQuantity() => Quantity.HasValue && false;
+    public bool ShouldSerializeDateAdd() => DateAdd.HasValue && false;
+    public bool ShouldSerializeDateUpd() => DateUpd.HasValue && false;
 
     public bool ShouldSerializeIdManufacturer() => IdManufacturer.HasValue;
     public bool ShouldSerializeIdSupplier() => IdSupplier.HasValue;
@@ -287,8 +289,6 @@ public class Product : PrestaShopEntity, IHasImages
     public bool ShouldSerializeIndexed() => Indexed.HasValue;
     public bool ShouldSerializeVisibility() => !string.IsNullOrEmpty(Visibility);
     public bool ShouldSerializeAdvancedStockManagement() => AdvancedStockManagement.HasValue;
-    public bool ShouldSerializeDateAdd() => DateAdd.HasValue;
-    public bool ShouldSerializeDateUpd() => DateUpd.HasValue;
     public bool ShouldSerializePackStockType() => PackStockType.HasValue;
     public bool ShouldSerializeMetaDescription() => MetaDescription != null;
     public bool ShouldSerializeMetaKeywords() => MetaKeywords != null;

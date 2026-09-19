@@ -32,6 +32,9 @@ public class OrderCarrier : PrestaShopEntity
     [XmlElement("date_add")]
     public DateTime? DateAdd { get; set; }
 
+    // Read-only fields
+    public bool ShouldSerializeDateAdd() => DateAdd.HasValue;
+
     public bool ShouldSerializeIdOrder() => IdOrder.HasValue;
     public bool ShouldSerializeIdCarrier() => IdCarrier.HasValue;
     public bool ShouldSerializeIdOrderInvoice() => IdOrderInvoice.HasValue;
@@ -39,5 +42,4 @@ public class OrderCarrier : PrestaShopEntity
     public bool ShouldSerializeShippingCostTaxExcl() => ShippingCostTaxExcl.HasValue;
     public bool ShouldSerializeShippingCostTaxIncl() => ShippingCostTaxIncl.HasValue;
     public bool ShouldSerializeTrackingNumber() => !string.IsNullOrEmpty(TrackingNumber);
-    public bool ShouldSerializeDateAdd() => DateAdd.HasValue;
 }

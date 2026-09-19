@@ -71,6 +71,9 @@ public class StockMvt : PrestaShopEntity
     [XmlElement("date_add")]
     public DateTime? DateAdd { get; set; }
 
+    // Read-only fields
+    public bool ShouldSerializeDateAdd() => DateAdd.HasValue && false;
+
     public bool ShouldSerializeIdProduct() => IdProduct.HasValue;
     public bool ShouldSerializeIdProductAttribute() => IdProductAttribute.HasValue;
     public bool ShouldSerializeIdWarehouse() => IdWarehouse.HasValue;
@@ -91,5 +94,4 @@ public class StockMvt : PrestaShopEntity
     public bool ShouldSerializeLastWa() => LastWa.HasValue;
     public bool ShouldSerializeCurrentWa() => CurrentWa.HasValue;
     public bool ShouldSerializePriceTe() => PriceTe.HasValue;
-    public bool ShouldSerializeDateAdd() => DateAdd.HasValue;
 }

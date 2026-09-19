@@ -20,8 +20,10 @@ public class OrderHistory : PrestaShopEntity
     [XmlElement("date_add")]
     public DateTime? DateAdd { get; set; }
 
+    // Read-only fields
+    public bool ShouldSerializeDateAdd() => DateAdd.HasValue;
+
     public bool ShouldSerializeIdEmployee() => IdEmployee.HasValue;
     public bool ShouldSerializeIdOrderState() => IdOrderState.HasValue;
     public bool ShouldSerializeIdOrder() => IdOrder.HasValue;
-    public bool ShouldSerializeDateAdd() => DateAdd.HasValue;
 }

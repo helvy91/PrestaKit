@@ -107,6 +107,10 @@ public class CartRule : PrestaShopEntity
     [XmlElement("name")]
     public TranslatedField? Name { get; set; }
 
+    // Read-only fields
+    public bool ShouldSerializeDateAdd() => DateAdd.HasValue && false;
+    public bool ShouldSerializeDateUpd() => DateUpd.HasValue && false;
+
     public bool ShouldSerializeIdCustomer() => IdCustomer.HasValue;
     public bool ShouldSerializeDateFrom() => DateFrom.HasValue;
     public bool ShouldSerializeDateTo() => DateTo.HasValue;
@@ -137,7 +141,5 @@ public class CartRule : PrestaShopEntity
     public bool ShouldSerializeGiftProductAttribute() => GiftProductAttribute.HasValue;
     public bool ShouldSerializeHighlight() => Highlight.HasValue;
     public bool ShouldSerializeActive() => Active.HasValue;
-    public bool ShouldSerializeDateAdd() => DateAdd.HasValue;
-    public bool ShouldSerializeDateUpd() => DateUpd.HasValue;
     public bool ShouldSerializeName() => Name != null;
 }

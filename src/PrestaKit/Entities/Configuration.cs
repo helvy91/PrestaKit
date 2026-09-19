@@ -26,10 +26,12 @@ public class Configuration : PrestaShopEntity
     [XmlElement("date_upd")]
     public DateTime? DateUpd { get; set; }
 
+    // Read-only fields
+    public bool ShouldSerializeDateAdd() => DateAdd.HasValue;
+    public bool ShouldSerializeDateUpd() => DateUpd.HasValue;
+
     public bool ShouldSerializeValue() => Value != null;
     public bool ShouldSerializeName() => Name != null;
     public bool ShouldSerializeIdShopGroup() => IdShopGroup.HasValue;
     public bool ShouldSerializeIdShop() => IdShop.HasValue;
-    public bool ShouldSerializeDateAdd() => DateAdd.HasValue;
-    public bool ShouldSerializeDateUpd() => DateUpd.HasValue;
 }
