@@ -91,7 +91,7 @@ var results = await client.Products.ListAsync(query);
 
 ```csharp
 await foreach (var product in client.Products.EnumerateAsync(
-    Query<Product>.Create(), pageSize: 100))
+    new Query<Product>(), pageSize: 100))
 {
     // process one product at a time; only one page is in flight
 }
