@@ -3,16 +3,29 @@ using System.Net;
 
 namespace PrestaKit.Exceptions
 {
+    /// <summary>Thrown when the PrestaShop API rejects a request (non-success status).</summary>
     public class PrestaShopApiException : PrestaShopException
     {
-        public HttpStatusCode HttpStatusCode { get; private set; }
-        public IReadOnlyList<PrestashopError> Errors { get; set; }
-        public string? ResponseBody { get; set; }
-        public Uri? RequestUri { get; set; }
+        /// <summary>The HTTP status code returned by PrestaShop.</summary>
+        public HttpStatusCode HttpStatusCode { get; }
 
+        /// <summary>The parsed errors returned by PrestaShop, if any.</summary>
+        public IReadOnlyList<PrestaShopError> Errors { get; }
+
+        /// <summary>The raw response body, when available. Useful for failures that carry no structured errors.</summary>
+        public string? ResponseBody { get; }
+
+        /// <summary>The URI of the request that failed, when available.</summary>
+        public Uri? RequestUri { get; }
+
+        /// <summary>Creates a new <see cref="PrestaShopApiException"/>.</summary>
+        /// <param name="httpStatusCode">The HTTP status code returned by PrestaShop.</param>
+        /// <param name="errors">The parsed errors, or an empty list if none.</param>
+        /// <param name="responseBody">The raw response body, if available.</param>
+        /// <param name="requestUri">The request URI, if available.</param>
         public PrestaShopApiException(
             HttpStatusCode httpStatusCode,
-            IReadOnlyList<PrestashopError> errors,
+            IReadOnlyList<PrestaShopError> errors,
             string? responseBody = null,
             Uri? requestUri = null) : base(BuildMessage(httpStatusCode, errors, responseBody))
         {
@@ -24,7 +37,7 @@ namespace PrestaKit.Exceptions
 
         private static string BuildMessage(
             HttpStatusCode httpStatusCode,
-            IReadOnlyList<PrestashopError> errors,
+            IReadOnlyList<PrestaShopError> errors,
             string? responseBody = null)
         {
             if (!errors.Any())

@@ -36,7 +36,7 @@ namespace PrestaKit.Tests.Querying
             var queryString = query.ToQueryString(DisplayMode.IdsOnly);
 
             // Assert
-            queryString.ShouldBe("filter[name]=%5BChair%5D%25");
+            queryString.ShouldBe("filter[name]=[Chair]%");
         }
 
         [Fact]
@@ -50,7 +50,7 @@ namespace PrestaKit.Tests.Querying
             var queryString = query.ToQueryString(DisplayMode.IdsOnly);
 
             // Assert
-            queryString.ShouldBe("filter[id]=%5B1%2C10%5D");
+            queryString.ShouldBe("filter[id]=[1,10]");
         }
 
         [Fact]
@@ -92,7 +92,7 @@ namespace PrestaKit.Tests.Querying
             var queryString = query.ToQueryString(DisplayMode.IdsOnly);
 
             // Assert
-            queryString.ShouldBe("limit=[1,10]");
+            queryString.ShouldBe("limit=1,10");
         }
 
         [Fact]

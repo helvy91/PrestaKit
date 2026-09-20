@@ -11,6 +11,6 @@ namespace PrestaKit.Serialization
         T DeserializeSingle<T>(string xml) where T : PrestaShopEntity;
         List<T> DeserializeList<T>(string xml) where T : PrestaShopEntity;
         List<long> DeserializeIds(string xml);
-        List<PrestashopError> DeserializeErrors(string xml);
+        List<PrestaShopError> DeserializeErrors(string xml);
     }
 }

@@ -74,7 +74,7 @@ namespace PrestaKit.Serialization
                 .ToList();
         }
 
-        public List<PrestashopError> DeserializeErrors(string xml)
+        public List<PrestaShopError> DeserializeErrors(string xml)
         {
             XDocument document;
             try
@@ -93,13 +93,13 @@ namespace PrestaKit.Serialization
                 return [];
             }
 
-            var result = new List<PrestashopError>();
+            var result = new List<PrestaShopError>();
             foreach (var errorNode in errorNodes.Elements())
             {
                 var codeElement = errorNode.Element("code");
                 var messageElement = errorNode.Element("message");
 
-                var error = new PrestashopError
+                var error = new PrestaShopError
                 {
                     Code = codeElement != null &&
                         int.TryParse(codeElement.Value, out var code) ? code : null,

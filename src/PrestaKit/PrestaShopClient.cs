@@ -87,10 +87,10 @@ namespace PrestaKit
         // File clients
 
         /// <inheritdoc/>
-        public IImageClient Images { get; private set; }
+        public IImageClient Images { get; }
 
         /// <inheritdoc/>
-        public IAttachmentFileClient Attachments { get; private set; }
+        public IAttachmentFileClient Attachments { get; }
 
         private static HttpClient BuildHttpClient(PrestaShopClientOptions options)
         {
