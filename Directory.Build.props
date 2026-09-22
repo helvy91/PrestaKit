@@ -1,39 +1,38 @@
 <Project>
 
-  <!-- Applies to every project in the repo (src, tests, samples). -->
-  <PropertyGroup>
-    <TargetFrameworks>net8.0;net10.0</TargetFrameworks>
-    <LangVersion>latest</LangVersion>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <AnalysisLevel>latest-recommended</AnalysisLevel>
-  </PropertyGroup>
+	<!-- Applies to every project in the repo (src, tests, samples). -->
+	<PropertyGroup>
+		<TargetFrameworks>net8.0;net10.0</TargetFrameworks>
+		<LangVersion>latest</LangVersion>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+		<AnalysisLevel>latest-recommended</AnalysisLevel>
+	</PropertyGroup>
 
-  <PropertyGroup>
-    <Authors>helvy91</Authors>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/helvy91/HelvyTools.PrestashopAPI</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/helvy91/HelvyTools.PrestashopAPI</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
-    <PackageTags>prestashop;api;client;ecommerce;webservice</PackageTags>
-    <Description>Modern .NET client library for the PrestaShop webservice API.</Description>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
+	<PropertyGroup>
+		<Authors>helvy91</Authors>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageProjectUrl>https://github.com/helvy91/PrestaKit</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/helvy91/PrestaKit</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<Description>A modern, typed .NET client for the PrestaShop webservice API.</Description>
+		<PackageTags>prestashop;ecommerce;api-client;webservice</PackageTags>
 
-    <PublishRepositoryUrl>true</PublishRepositoryUrl>
-    <EmbedUntrackedSources>true</EmbedUntrackedSources>
-    <IncludeSymbols>true</IncludeSymbols>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <ContinuousIntegrationBuild Condition="'$(CI)' == 'true'">true</ContinuousIntegrationBuild>
-  </PropertyGroup>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<ContinuousIntegrationBuild Condition="'$(CI)' == 'true'">true</ContinuousIntegrationBuild>
+	</PropertyGroup>
 
-  <PropertyGroup>
-    <IsPackable>false</IsPackable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<IsPackable>true</IsPackable>
+	</PropertyGroup>
 
-<ItemGroup>
-	<InternalsVisibleTo Include="PrestaKit.Tests" />
-	<InternalsVisibleTo Include="PrestaKit.IntegrationTests" />
-</ItemGroup>
+	<ItemGroup>
+		<InternalsVisibleTo Include="PrestaKit.Tests" />
+		<InternalsVisibleTo Include="PrestaKit.IntegrationTests" />
+	</ItemGroup>
 
 </Project>

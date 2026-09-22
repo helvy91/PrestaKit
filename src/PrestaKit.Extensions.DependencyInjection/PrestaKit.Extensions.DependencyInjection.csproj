@@ -1,20 +1,20 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFrameworks>net8.0;net10.0</TargetFrameworks>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<!-- Package identity -->
+	<PropertyGroup>
+		<PackageId>PrestaKit.Extensions.DependencyInjection</PackageId>
+		<Version>0.1.0</Version>
+	</PropertyGroup>
+	
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.Http" />
+		<PackageReference Include="Microsoft.Extensions.Options" />
+		<PackageReference Include="Microsoft.Extensions.Options.DataAnnotations" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
+	</ItemGroup>
 
-  <ItemGroup>
-	  <PackageReference Include="Microsoft.Extensions.Http" />
-	  <PackageReference Include="Microsoft.Extensions.Options" />
-	  <PackageReference Include="Microsoft.Extensions.Options.DataAnnotations" />
-	  <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\PrestaKit\PrestaKit.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\PrestaKit\PrestaKit.csproj" />
+	</ItemGroup>
 
 </Project>
