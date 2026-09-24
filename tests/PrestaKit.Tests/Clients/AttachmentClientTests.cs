@@ -10,6 +10,7 @@ using WireMock.Server;
 
 namespace PrestaKit.Tests.Clients
 {
+    [Trait("Category", "Unit")]
     public class AttachmentFileClientTests : IDisposable
     {
         private readonly AttachmentFileClient _sut;

@@ -12,6 +12,7 @@ using WireMock.Server;
 
 namespace PrestaKit.Tests.Clients
 {
+    [Trait("Category", "Unit")]
     public class ResourceClientTests : IDisposable
     {
         private readonly ResourceClient<Product> _sut;

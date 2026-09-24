@@ -5,7 +5,6 @@ using Shouldly;
 
 namespace PrestaKit.IntegrationTests
 {
-    [Collection("PrestaShop")]
     public class CustomerIntegrationTests : IntegrationTestBase
     {
         public CustomerIntegrationTests(PrestaShopContainerFixture fixture) : base(fixture) { }

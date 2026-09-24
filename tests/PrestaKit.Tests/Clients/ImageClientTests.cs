@@ -11,6 +11,7 @@ using WireMock.Server;
 
 namespace PrestaKit.Tests.Clients
 {
+    [Trait("Category", "Unit")]
     public class ImageClientTests : IDisposable
     {
         private readonly ImageClient _sut;

@@ -7,7 +7,6 @@ using Shouldly;
 
 namespace PrestaKit.IntegrationTests
 {
-    [Collection("PrestaShop")]
     public class OrderIntegrationTests : IntegrationTestBase
     {
         private const int CountryId = 1;

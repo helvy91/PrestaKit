@@ -17,6 +17,7 @@ namespace PrestaKit.Tests.Serialization
         [XmlElement("dummy_surname")] public string? Surname { get; set; }
     }
 
+    [Trait("Category", "Unit")]
     public class PrestaShopSerializerTests
     {
         private readonly PrestaShopXmlSerializer _sut = new PrestaShopXmlSerializer();

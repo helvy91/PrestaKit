@@ -9,6 +9,7 @@ namespace PrestaKit.Tests.Querying
         public string? Name { get; set; }
     }
 
+    [Trait("Category", "Unit")]
     public class QueryTests
     {
         [Fact]

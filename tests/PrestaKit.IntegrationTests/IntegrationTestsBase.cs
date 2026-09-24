@@ -5,6 +5,7 @@ using System.Text;
 namespace PrestaKit.IntegrationTests
 {
     [Collection("PrestaShop")]
+    [Trait("Category", "Integration")]
     public abstract class IntegrationTestBase
     {
         protected PrestaShopClient Client { get; }

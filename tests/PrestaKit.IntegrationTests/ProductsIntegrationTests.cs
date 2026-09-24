@@ -10,7 +10,6 @@ using System.Text;
 
 namespace PrestaKit.IntegrationTests
 {
-    [Collection("PrestaShop")]
     public class ProductIntegrationTests : IntegrationTestBase
     {
         private readonly string _testRunId = Guid.NewGuid().ToString("N")[..8];
