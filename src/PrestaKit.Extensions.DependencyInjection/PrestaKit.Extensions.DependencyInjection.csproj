@@ -3,7 +3,6 @@
 	<!-- Package identity -->
 	<PropertyGroup>
 		<PackageId>PrestaKit.Extensions.DependencyInjection</PackageId>
-		<Version>0.2.0</Version>
 	</PropertyGroup>
 	
 	<ItemGroup>

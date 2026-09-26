@@ -19,6 +19,8 @@
 		<Description>A modern, typed .NET client for the PrestaShop webservice API.</Description>
 		<PackageTags>prestashop;ecommerce;api-client;webservice</PackageTags>
 
+		<Version>0.2.1</Version>
+
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
 		<IncludeSymbols>true</IncludeSymbols>

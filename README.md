@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/helvy91/PrestaKit/main/assets/logo.png" alt="PrestaKit" width="200">
+</p>
+
 # PrestaKit
 
 A modern, typed .NET client for the PrestaShop webservice API. Easy to use,
