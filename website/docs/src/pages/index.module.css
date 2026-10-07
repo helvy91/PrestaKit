@@ -1,0 +1,159 @@
+/**
+ * Landing page styles for PrestaKit.
+ */
+
+.heroBanner {
+  padding: 5rem 0 4rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--ifm-color-primary-lightest) 0%, var(--ifm-color-primary) 100%);
+  color: #fff;
+}
+
+.heroLogo {
+  width: 140px;
+  height: auto;
+  margin-bottom: 1.5rem;
+}
+
+.heroTitle {
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.heroSubtitle {
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Problem / solution */
+.problem {
+  padding: 4rem 0;
+}
+
+.problemInner {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.problemInner h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.problemInner p {
+  font-size: 1.15rem;
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.7;
+}
+
+/* Code comparison */
+.comparison {
+  padding: 4rem 0;
+  background: var(--ifm-color-emphasis-100);
+}
+
+.comparisonHeading {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.comparisonGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .comparisonGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.codeCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.codeLabel {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.codeLabelBad {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.codeLabelGood {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+/* Quick start */
+.quickstart {
+  padding: 4rem 0 5rem;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.quickstartHeading {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.quickstartButtons {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.heroBanner :global(.button--primary) {
+  background-color: #fff;
+  border-color: #fff;
+  color: var(--ifm-color-primary-darkest);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+
+.heroBanner :global(.button--primary:hover) {
+  background-color: #fff;
+  border-color: #fff;
+  color: var(--ifm-color-primary-darkest);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.heroBanner :global(.button--secondary) {
+  background-color: transparent;
+  border-color: #fff;
+  color: #fff;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.heroBanner :global(.button--secondary:hover) {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: #fff;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}

@@ -1,0 +1,35 @@
+.features {
+  display: flex;
+  align-items: center;
+  padding-bottom: 2rem;
+  width: 100%;
+}
+
+.feature {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  height: 100%;
+}
+
+.featureImage {
+  margin-bottom: 10px;
+  width: 240px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  border-radius: 15px;
+}
+
+.featureTitle {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.featureDescription {
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.6;
+  font-size: 0.98rem;
+}
+
+.featureDescription code {
+  font-size: 0.85em;
+}

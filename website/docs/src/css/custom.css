@@ -1,0 +1,27 @@
+/**
+ * PrestaKit theme — midnightblue brand.
+ */
+
+:root {
+  --ifm-color-primary: #191970;
+  --ifm-color-primary-dark: #161663;
+  --ifm-color-primary-darker: #14145c;
+  --ifm-color-primary-darkest: #11114c;
+  --ifm-color-primary-light: #1f1f8c;
+  --ifm-color-primary-lighter: #23239d;
+  --ifm-color-primary-lightest: #2a2abe;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* Dark mode — a brighter midnightblue so it reads on a dark background */
+[data-theme='dark'] {
+  --ifm-color-primary: #5454d9;
+  --ifm-color-primary-dark: #3b3bd4;
+  --ifm-color-primary-darker: #2f2fd1;
+  --ifm-color-primary-darkest: #2626ac;
+  --ifm-color-primary-light: #6d6dde;
+  --ifm-color-primary-lighter: #8585e4;
+  --ifm-color-primary-lightest: #b7b7ef;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
