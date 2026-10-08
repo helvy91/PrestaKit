@@ -14,7 +14,7 @@ const config: Config = {
   },
 
   url: 'https://helvy91.github.io',
-  baseUrl: '/PrestaKit/',
+  baseUrl: '/',
   organizationName: 'helvy91',
   projectName: 'PrestaKit',
 
