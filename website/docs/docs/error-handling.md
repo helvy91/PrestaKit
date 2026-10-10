@@ -1,5 +1,7 @@
----
+﻿---
 sidebar_position: 6
+description: Error Handling - using PrestaKit, a typed .NET client for the PrestaShop API.
+keywords: [prestashop, .net, c#, api, client, webservice]
 ---
 
 # Exceptions

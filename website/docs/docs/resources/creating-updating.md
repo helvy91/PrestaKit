@@ -1,5 +1,7 @@
----
+﻿---
 sidebar_position: 3
+description: Creating Updating - using PrestaKit, a typed .NET client for the PrestaShop API.
+keywords: [prestashop, .net, c#, api, client, webservice]
 ---
 
 # Create/Update/Delete

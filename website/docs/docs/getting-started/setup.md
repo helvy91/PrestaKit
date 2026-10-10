@@ -1,5 +1,7 @@
----
+﻿---
 sidebar_position: 2
+description: Setup - using PrestaKit, a typed .NET client for the PrestaShop API.
+keywords: [prestashop, .net, c#, api, client, webservice]
 ---
 
 import Tabs from '@theme/Tabs';

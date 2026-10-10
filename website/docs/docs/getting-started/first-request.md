@@ -1,5 +1,7 @@
----
+﻿---
 sidebar_position: 3
+description: First Request - using PrestaKit, a typed .NET client for the PrestaShop API.
+keywords: [prestashop, .net, c#, api, client, webservice]
 ---
 
 # Creating a request

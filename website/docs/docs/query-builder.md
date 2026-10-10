@@ -1,5 +1,7 @@
----
+﻿---
 sidebar_position: 5
+description: Query Builder - using PrestaKit, a typed .NET client for the PrestaShop API.
+keywords: [prestashop, .net, c#, api, client, webservice]
 ---
 
 # `Query<T>`

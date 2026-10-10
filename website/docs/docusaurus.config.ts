@@ -6,7 +6,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'PrestaKit',
-  tagline: 'A modern, typed .NET client for the PrestaShop webservice API',
+  tagline: 'PrestaKit | C# .NET Client for the PrestaShop webservice API',
   favicon: 'img/favicon.ico',
 
   future: {
@@ -47,6 +47,10 @@ const config: Config = {
     colorMode: {
       respectPrefersColorScheme: true,
     },
+    metadata: [
+      { name: 'keywords', content: 'prestashop, .net, c#, api, client, webservice, nuget' },
+      { name: 'description', content: 'A modern, typed .NET client for the PrestaShop webservice API. Typed entities, fluent queries, exception handling.' },
+    ],
     navbar: {
       title: 'PrestaKit',
       logo: {

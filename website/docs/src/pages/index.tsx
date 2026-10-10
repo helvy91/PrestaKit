@@ -143,8 +143,8 @@ export default function Home(): ReactNode {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={siteConfig.title}
-      description="A modern, typed .NET client for the PrestaShop webservice API.">
+      title="PrestaKit | C# .NET Client for the PrestaShop webservice API"
+      description="A modern, typed .NET client for the PrestaShop webservice API. Typed entities, fluent queries, exception handling.">
       <HomepageHeader />
       <main>
         <ProblemSolution />

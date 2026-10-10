@@ -1,6 +1,8 @@
----
+﻿---
 sidebar_position: 1
 title: Introduction
+description: Intro - using PrestaKit, a typed .NET client for the PrestaShop API.
+keywords: [prestashop, .net, c#, api, client, webservice]
 ---
 
 # PrestaKit
